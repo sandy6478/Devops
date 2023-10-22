@@ -9,28 +9,28 @@ pipeline {
        // }
      stage('Install Maven Build Tool') {
             steps { 
-                sh 'wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz'
-                sh 'tar -xzvf /var/lib/jenkins/workspace/test/apache-maven-3.9.4-bin.tar.gz'
+                sh 'wget https://dlcdn.apache.org/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.tar.gz'
+                sh 'tar -xzvf /var/lib/jenkins/workspace/test/apache-maven-3.9.5-bin.tar.gz'
              } 
            }
      stage('Compile Sample Application') {
             steps {
                 dir('/var/lib/jenkins/workspace/test/addressbook/addressbook_main'){
-                sh '/var/lib/jenkins/workspace/test/apache-maven-3.9.4/bin/mvn compile'
+                sh '/var/lib/jenkins/workspace/test/apache-maven-3.9.5/bin/mvn compile'
             }
            }
         }
     stage('Test Sample Application') {
             steps {
                 dir('/var/lib/jenkins/workspace/test/addressbook/addressbook_main'){
-                sh '/var/lib/jenkins/workspace/test/apache-maven-3.9.4/bin/mvn test'
+                sh '/var/lib/jenkins/workspace/test/apache-maven-3.9.5/bin/mvn test'
             }
            }
         }
      stage('Package Sample Application') {
             steps {
                 dir('/var/lib/jenkins/workspace/test/addressbook/addressbook_main'){
-                sh '/var/lib/jenkins/workspace/test/apache-maven-3.9.4/bin/mvn package'
+                sh '/var/lib/jenkins/workspace/test/apache-maven-3.9.5/bin/mvn package'
             }
            }
         }
