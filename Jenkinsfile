@@ -39,7 +39,7 @@ pipeline {
                 sh 'sudo apt update'
                 sh 'sudo apt install openjdk-17-jre -y'
                 sh 'sudo mkdir -p  home/cloudadmin/tomcat/tomcat1'
-                sh 'sudo chomd 755 home/cloudadmin/tomcat/tomcat1'
+                sh 'sudo chmod 755 home/cloudadmin/tomcat/tomcat1'
            }
         }
 
